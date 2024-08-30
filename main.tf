@@ -6,13 +6,14 @@ resource "kubernetes_namespace" "example" {
   }
 }
 
+
 resource "kubernetes_resource_quota" "example" {
   metadata {
-    name = "pod-quota"
+    name      = "pod-quota"
     namespace = kubernetes_namespace.example.metadata[0].name
   }
   spec {
-    hard ={
+    hard = {
       pods = var.pod_quota
     }
     scopes = ["BestEffort"]
@@ -22,7 +23,7 @@ resource "kubernetes_resource_quota" "example" {
 
 resource "kubernetes_limit_range" "example" {
   metadata {
-    name = "pod-limit-range"
+    name      = "pod-limit-range"
     namespace = kubernetes_namespace.example.metadata[0].name
   }
   spec {

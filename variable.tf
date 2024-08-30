@@ -16,18 +16,18 @@ variable "labels" {
   type        = map(any)
   default     = {}
 }
-variable pod_quota {
+variable "pod_quota" {
   description = "Please specify pod quota"
-  type = string 
-  default = ""
+  type        = string
+  default     = ""
 }
-variable pod_cpu_limit {
+variable "pod_cpu_limit" {
   description = "Please specify cpu limit"
-  type = string 
-  default = ""
+  type        = string
+  default     = ""
 }
-variable pod_memory_limit {
+variable "pod_memory_limit" {
   description = "Please specify memory limit"
-  type = string 
-  default = ""
+  type        = string
+  default     = ""
 }
